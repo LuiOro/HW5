@@ -1,0 +1,20 @@
+from weather_app import WeatherData, DataStorage, DataTransmission, DataAnalysis
+
+# Initialize weather data
+weather_data = WeatherData()
+
+# Collect weather data
+weather_data.collect_data()
+
+# Store weather data
+storage = DataStorage()
+storage.save_data(weather_data)
+
+# Transmit weather data
+transmission = DataTransmission()
+transmission.send_data(weather_data)
+
+# Analyze weather data
+analyzer = DataAnalysis()
+average_temp = analyzer.calculate_average_temperature(weather_data)
+print(f"Average temperature: {average_temp}°C")
